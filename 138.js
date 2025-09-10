@@ -10,12 +10,13 @@
 /**
  * @param {_Node} head
  * @return {_Node}
+ * 复制 随机指针的链表
  */
 var copyRandomList = function (head) {
   if (head === null) {
     return head;
   }
-  const hash = new Map();
+  const hash = new Map(); // 通过哈希表
 
   let node = head;
   while (head) {
@@ -23,7 +24,7 @@ var copyRandomList = function (head) {
     node = node.next;
   }
 
-  node = head;
+  node = head; // 从头开始构建 next 和  random
   while (node) {
     hash.get(node).next = hash.get(node.next);
     hash.get(node).random = hash.get(node.random);

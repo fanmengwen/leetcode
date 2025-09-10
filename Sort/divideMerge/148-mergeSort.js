@@ -11,31 +11,31 @@
  * @return {ListNode}
  */
 var sortList = function (head) {
-  return mergeList(head, null);
+  if (head === null || head.next === null) return head;
+  let head2 = middleNode(head);
+  head = sortList(head);
+  head2 = sortList(head2);
+
+  return mergeList(head, head2);
 };
 
-function mergeList(start, end) {
-  if (!start) return start;
-  if (start.next === end) {
-    start.next = null; // 由于 end 属于右边那部分的，不关左边事，所以断开连接再返回
-    return start;
-  }
-  let slow = start,
-    fast = start;
-  while (fast !== end) {
+function middleNode(head) {
+  let slow = head,
+    fast = head;
+  pre = head;
+  while (fast !== null && fast.next !== null) {
+    pre = slow;
+
     slow = slow.next;
-    fast = fast.next;
-    if (fast !== end) {
-      // 否则 fast.next.next 会报错
-      fast = fast.next;
-    }
+    fast = fast.next.next;
   } // 找到中点
-  let middle = slow;
-  return merge(mergeList(start, middle), mergeList(middle, end));
+
+  pre.next = null;
+  return slow;
 }
 
 // [1,2,5] [2,3]
-function merge(left, right) {
+function mergeList(left, right) {
   let newHead = new ListNode(0);
   let now = newHead;
   while (left && right) {

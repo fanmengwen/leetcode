@@ -1,6 +1,7 @@
 /**
  * @param {number[]} nums
  * @return {number}
+ * 左右指针，二分查找
  */
 var findMin = function (nums) {
   let low = 0,

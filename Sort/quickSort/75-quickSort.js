@@ -1,6 +1,7 @@
 /**
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
+ * 基础的快排
  */
 
 function sortArr(arr) {

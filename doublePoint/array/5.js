@@ -1,6 +1,7 @@
 /**
  * @param {string} s
  * @return {string}
+ * 判断最长回文子串： 左右指针
  */
 
 function isPar(s) {

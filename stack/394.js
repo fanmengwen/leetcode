@@ -12,15 +12,15 @@ var decodeString = function (s) {
     if (!isNaN(a)) {
       num = num * 10 + Number(a);
     } else if (a === "[") {
-      stringStack.push(res);
-      res = "";
+      stringStack.push(res); // 把之前的 string 和 num 存起来，开始计算 res
       numStack.push(num);
       num = 0;
+      res = "";
     } else if (a === "]") {
-      let repeatTimes = numStack.pop(); // 获取拷贝次数
-      res = stringStack.pop() + res.repeat(repeatTimes); // 构建子串
+      const cur = numStack.pop(); // 取出数值， 计算重复次数
+      res = stringStack.pop() + res.repeat(cur);
     } else {
-      res = res + a;
+      res += a; // 连接字符串
     }
   }
   return res;

@@ -1,5 +1,5 @@
 /**
- * 考察快速排序-》快速选择
+ * 数组里第几个最大的元素：考察快速排序-》快速选择
  * @param {number[]} nums
  * @param {number} k
  * @return {number}
