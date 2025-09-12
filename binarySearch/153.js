@@ -17,4 +17,4 @@ var findMin = function (nums) {
   return nums[low];
 };
 
-console.log(findMin([11, 13, 15, 17]));
+console.log(findMin([3, 4, 5, 1, 2]));

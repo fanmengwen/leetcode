@@ -1,3 +1,5 @@
+// 贪心算法
+
 var maxProfit = function (prices) {
   let ans = 0;
   let min = prices[0];

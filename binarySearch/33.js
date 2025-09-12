@@ -17,6 +17,7 @@ function findMin(nums) {
   }
   return left;
 }
+
 function binarySearch(nums, target) {
   console.log("🚀 ~ binarySearch ~ nums:", nums);
   let left = 0,
