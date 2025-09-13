@@ -9,15 +9,16 @@
 /**
  * @param {TreeNode} root
  * @param {number} targetSum
+ * 穷举找路径和
  * @return {number}
  */
 var pathSum = function (root, targetSum) {
   if (root === null) {
     return 0;
   }
-  let ret = rootSum(root, targetSum);
-  ret += pathSum(root.left, targetSum);
-  ret += pathSum(root.right, targetSum);
+  let ret = rootSum(root, targetSum); // 穷举所有的可能， 以根节点开始的路劲
+  ret += pathSum(root.left, targetSum); // 穷举所有的可能， 以根的左节点开始的路劲
+  ret += pathSum(root.right, targetSum); // 穷举所有的可能， 以根的右节点开始的路劲
   return ret;
 };
 

@@ -5,6 +5,10 @@ function TreeNode(val, left, right) {
   this.right = right === undefined ? null : right;
 }
 
+/*
+层序遍历， 递归处理，每次更新当前的cur
+进阶版本 199
+*/
 var levelOrder = function (root) {
   if (root === null) {
     return [];
@@ -16,6 +20,7 @@ var levelOrder = function (root) {
     let next = [];
     let vals = [];
     for (let node of cur) {
+      // 循环每一个节点，获取他的左右节点作为下一次层级
       vals.push(node.val);
       if (node.left) next.push(node.left);
       if (node.right) next.push(node.right);
