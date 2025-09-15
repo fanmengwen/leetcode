@@ -1,24 +1,24 @@
 /**
- * @param {number[]} nums
- * @return {number}
+ * @param {number} n
+ * @return {string[]}
  */
-var jump = function (s) {
-  const hash = new Map();
-  for (let i in s) {
-    hash.set(s[i], i);
-  }
-
+var generateParenthesis = function (n) {
   const ans = [];
-  let right = 0;
-  let left = 0;
+  const path = Array(n * 2);
 
-  for (let i = 0; i < s.length; i++) {
-    right = Math.max(right, hash.get(s[i]));
-    if (right === i) {
-      ans.push(right - left);
+  function dfs(left, right) {
+    if(right === n ) {
+      push。、。。
     }
+    if (left < n) {
+      path[left + right] = "(";
+      dfs(left + 1, right);
+    }
+    if(right )
   }
-  console.log("🚀 ~ jump ~ hash:", hash);
+
+  dfs(0, 0);
+  return ans;
 };
 
-console.log(jump("ababcbacadefegdehijhkli"));
+console.log(generateParenthesis(3));

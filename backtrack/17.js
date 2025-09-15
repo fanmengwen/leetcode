@@ -21,11 +21,11 @@ var letterCombinations = function (digits) {
 
   for (const ch of digits) {
     const index = Number(ch);
-    digitsArray.push(alpha[index]);
+    digitsArray.push(aplpha[index]);
   }
 
   len = digitsArray.length;
-  console.log("sds", alpha, digitsArray);
+  console.log("sds", aplpha, digitsArray);
 
   if (len === 0) {
     return [];
@@ -38,7 +38,7 @@ var letterCombinations = function (digits) {
     for (let j = 0; j < 3; j++) {
       path += digitsArray[startIndex][j];
       dfs(path, startIndex + 1);
-      path = path.slice(0, path.length - 1);
+      path = path.slice(0, path.length - 1); // 回溯上一个 path
     }
   }
   dfs(path, 0);
@@ -46,4 +46,4 @@ var letterCombinations = function (digits) {
   return res;
 };
 
-console.log(letterCombinations("7"));
+console.log(letterCombinations("23"));

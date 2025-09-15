@@ -37,7 +37,7 @@ var maxDepth = function (root) {
 /**
  * @param {TreeNode} root
  * @return {number}
- * 求直径，其实就是左右 maxDepth 之和最大
+ * 求直径，其实就是左右 maxDepth 之和最大 543
  */
 var diameterOfBinaryTree = function (root) {
   let maxDiameter = 0;

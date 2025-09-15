@@ -1,6 +1,7 @@
 /**
  * @param {number[]} nums
  * @return {number[][]}
+ * 所有可能的子集
  */
 var subsets = function (nums) {
   const len = nums.length;

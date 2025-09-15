@@ -1,6 +1,7 @@
 /**
  * @param {number} n
  * @return {string[]}
+ * 括号的组成
  */
 var generateParenthesis = function (n) {
   const ans = [];
