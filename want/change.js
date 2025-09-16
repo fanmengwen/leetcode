@@ -1,4 +1,5 @@
 // 团子 2
+// 微信抢红包策略
 function splitMoney(m, n) {
   const minVal = 0.1;
   const maxVal = m / 2;
