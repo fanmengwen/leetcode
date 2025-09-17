@@ -49,5 +49,5 @@ function mergeList(left, right) {
     now = now.next;
   }
   now.next = head1 ? head1 : head2;
-  return now.next;
+  return newHead.next;
 }

@@ -12,7 +12,7 @@
  */
 var mergeKLists = function (lists) {
   const m = lists.length;
-  if ((m = 0)) {
+  if (m === 0) {
     return null;
   }
 

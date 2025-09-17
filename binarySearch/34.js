@@ -8,7 +8,6 @@
 var searchRange = function (nums, target) {
   let left = 0,
     right = nums.length - 1;
-  const ans = nums.length;
 
   let first = -1,
     last = -1;
