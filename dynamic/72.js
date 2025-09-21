@@ -2,6 +2,7 @@
  * @param {string} word1
  * @param {string} word2
  * @return {number}
+ * 给你两个单词 word1 和 word2， 请返回将 word1 转换成 word2 所使用的最少操作数  。
  */
 var minDistance = function (word1, word2) {
   let dp = Array.from(Array(word1.length + 1), () =>

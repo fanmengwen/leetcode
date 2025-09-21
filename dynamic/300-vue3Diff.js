@@ -8,7 +8,6 @@ var lengthOfLIS = function (nums) {
   const dp = Array(nums.length).fill(1);
 
   dp[0] = 1;
-  dp[1] = 1;
 
   for (let i = 1; i < nums.length; i++) {
     for (let j = 0; j < i; j++) {
