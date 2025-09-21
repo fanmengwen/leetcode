@@ -2,6 +2,9 @@
  * @param {number[][]} matrix
  * @param {number} target
  * @return {boolean}
+ *  来搜索 m x n 矩阵 matrix 中的一个目标值 target
+ *  每行的元素从左到右升序排列。 每列的元素从上到下升序排列。
+ *  思路，从右上角开始比对，如果太大了，i--, 缩小。如果小了， j++, 扩大
  */
 var searchMatrix = function (matrix, target) {
   const n = matrix.length;

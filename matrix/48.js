@@ -1,6 +1,7 @@
 /**
  * @param {number[][]} matrix
  * @return {void} Do not return anything, modify matrix in-place instead.
+ * 旋转矩阵，就是沿着主对角线交换，再反转每一行
  */
 var rotate = function (matrix) {
   for (let i = 0; i < matrix.length; i++) {

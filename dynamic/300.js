@@ -1,6 +1,8 @@
 /**
  * @param {number[]} nums
  * @return {number}
+ * 最长递增子序列
+ * dp[i] 表示：以 nums[i] 这个元素结尾的最长递增子序列的长度。
  */
 var lengthOfLIS = function (nums) {
   const dp = Array(nums.length).fill(1);
@@ -11,6 +13,8 @@ var lengthOfLIS = function (nums) {
   for (let i = 1; i < nums.length; i++) {
     for (let j = 0; j < i; j++) {
       if (nums[i] > nums[j]) {
+        //  如果 nums[i] 比 nums[j] 大，说明 nums[i] 可以接在后面
+        // 更新 dp[i] 为 dp[j] + 1 和 dp[i] 自身的最大值
         dp[i] = Math.max(dp[i], dp[j] + 1);
       }
     }

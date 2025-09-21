@@ -1,12 +1,13 @@
 /**
  * @param {string} s
  * @return {number}
- * 无重复字符的最长子串, 滑动窗口
+ * 无重复字符的最长子串, 滑动窗口, 快慢指针
  */
 var lengthOfLongestSubstring = function (s) {
   let left = 0;
   let set = new Set();
   let ans = 0;
+
   for (let i = 0; i < s.length; i++) {
     while (set.has(s[i])) {
       set.delete(s[left]);
