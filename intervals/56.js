@@ -1,6 +1,6 @@
 /**
  * @param {number[][]} intervals
- * @return {number[][]}
+ * @return {number[][]} 合并区间
  */
 var merge = function (intervals) {
   const ans = [];

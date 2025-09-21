@@ -1,7 +1,7 @@
 /**
  * @param {number[][]} intervals
  * @return {number}
- *  安排最小数量的会议室
+ *  安排最小数量的会议室， 合并区间
  */
 var minMeetingRooms = function (intervals) {
   intervals.sort((a, b) => a[0] - b[0]); // 先排序

@@ -33,6 +33,7 @@ var canPartitionKSubsets = function (nums, k) {
 
       res[i] += currentNum;
 
+      // 特殊 startIndex + 1， startIndex 标记的是任务的进度或决策的阶段
       if (dfs(startIndex + 1)) {
         return true;
       }

@@ -1,7 +1,7 @@
 /**
  * @param {string} s
  * @return {string}
- * 判断最长回文子串： 左右指针
+ * 判断最长回文子串： 左右指针， 暴力枚举法
  */
 
 function isPar(s) {
@@ -22,6 +22,11 @@ var longestPalindrome = function (s) {
 };
 
 // console.log(longestPalindrome("a"));
+/**
+ *
+ * @param {*} s
+ * @returns 最长回文子串， 中心扩展法 ， 效率高得多
+ */
 var longestPalindrome2 = function (s) {
   let left = 0,
     right = 0;

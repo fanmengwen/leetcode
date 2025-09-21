@@ -3,6 +3,7 @@ function ListNode(val, next) {
   this.val = val === undefined ? 0 : val;
   this.next = next === undefined ? null : next;
 }
+// 两两叫魂链表
 
 var swapPairs = function (head) {
   const dummy = new ListNode(0, head); // 用哨兵节点简化代码逻辑
