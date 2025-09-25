@@ -1,11 +1,3 @@
-/**
- * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
- * }
- */
 function TreeNode(val, left, right) {
   this.val = val === undefined ? 0 : val;
   this.left = left === undefined ? null : left;
@@ -13,13 +5,15 @@ function TreeNode(val, left, right) {
 }
 
 /**
+ * 给你二叉树的根结点 root ，请你将它展开为一个单链表：
+  展开后的单链表应该同样使用 TreeNode ，其中 right 子指针指向链表中下一个结点，而左子指针始终为 null 。
+  展开后的单链表应该与二叉树 先序遍历 顺序相同。
  * @param {TreeNode} root
  * @return {void} Do not return anything, modify root in-place instead.
  * 采用头插法构建链表，要按照 6→5→4→3→2→1 的顺序访问节点（假设这是一棵从1到6的二叉树）。为了实现“头插法”，你必须逆序处理这些节点。
 
-标准后序遍历 (左-右-根): 它的代码实现是先递归left，再递归right，最后处理root。这是教科书上定义的标准后序遍历。
-先序遍历（根左右）：刚好跟现在头插法反过来
-头插法中使用的遍历 (右-左-根): 它的代码实现是先递归right，再递归left，最后处理root。
+题目要求是 先序遍历（根左右）：头插法反过来处理，所以我们的遍历就是  (右-左-根
+  先递归right，再递归left，最后处理root。
 
 DFS 的同时，记录当前链表的头节点为 head。一开始 head 是空节点。
   具体来说：

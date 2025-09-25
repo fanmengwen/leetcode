@@ -10,7 +10,8 @@
  * @param {TreeNode} root
  * @param {number} k
  * @return {number}
- * 二叉搜索树里最k 小的值
+ * 二叉搜索树里最k 小的值，
+ * 二叉树的中序遍历是递增的，所以中序遍历去处理
  */
 var kthSmallest = function (root, k) {
   let ans = 0;
