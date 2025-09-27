@@ -2,7 +2,9 @@
  * @param {number[]} nums
  * @param {number} k
  * @return {number[]}
- * 返回 滑动窗口中的最大值 。单调减，如果新来的值很大， 就把其他小的踢走
+ * 返回 滑动窗口中的最大值 。单调队列减，
+ * 在任何时候，队首 (deque[0]) 保存的永远是当前滑动窗口内的最大值的索引。如果新来的值很大， 就把其他小的踢走
+ * 队尾淘汰更小者” 和 “队首淘汰过期者
  */
 var maxSlidingWindow = function (nums, k) {
   const res = [];
@@ -17,7 +19,8 @@ var maxSlidingWindow = function (nums, k) {
     }
     deque.push(i);
 
-    // 队列长度超出就不要第一个
+    // 当前窗口的范围是 [i - k + 1, i]， 队列长度超出就不要第一个
+    // 如果 deque[0] <= i - k，说明它比窗口的左边界还要小，说明它已经“过期”了，需要从队首移除
     if (deque[0] <= i - k) {
       deque.shift();
       console.log("🚀 ~ maxSlidingWindow ~ deque:", deque);

@@ -8,16 +8,16 @@ var maxArea = function (height) {
   let right = height.length - 1;
   let ans = 0;
   while (left < right) {
-    const front = height[i];
-    const back = height[j];
+    const front = height[left];
+    const back = height[right];
 
     let cur = 0;
     if (front < back) {
-      cur = front * (j - i); // 计算面积
-      i++;
+      cur = front * (right - left); // 计算面积
+      left++;
     } else {
-      cur = back * (j - i);
-      j--;
+      cur = back * (right - left);
+      right--;
     }
     ans = Math.max(ans, cur);
   }

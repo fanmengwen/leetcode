@@ -11,6 +11,7 @@ var findKthLargest = function (nums, k) {
     return nums[0];
   }
 
+  // 快速排序, 所有 比 pivot 小的元素放到 storeIndex 的左边
   function partition(left, right) {
     const pivotValue = nums[right];
     let storeIndex = left;

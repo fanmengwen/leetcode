@@ -35,3 +35,55 @@ const rootSum = function (root, targetSum) {
   ret += rootSum(root.right, targetSum - root.val);
   return ret;
 };
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}124. 二叉树中的最大路径和
+ */
+var maxPathSum = function (root) {
+  if (!root) {
+    return 0;
+  }
+
+  let maxSum = -Infinity;
+
+  /**
+   * 定义一个递归函数 dfs，它的作用是：
+   * 1. 计算以当前 node 为顶点的路径和，并更新 maxSum
+   * 2. 返回以当前 node 为起点的“单边最大路径和”（对父节点的贡献）
+   * @param {TreeNode} node
+   * @returns {number}
+   */
+  const dfs = (root) => {
+    // 1. 基线条件：如果节点为空，它的贡献值为 0
+    if (node === null) {
+      return 0;
+    }
+
+    // 2. 递归计算左、右子树的最大贡献值
+    // 如果子树的贡献值为负，则我们不采纳它，计为 0
+    const leftGain = Math.max(0, dfs(node.left));
+    const rightGain = Math.max(0, dfs(node.right));
+
+    // 3. 计算以当前节点为“顶点”的路径和
+    // 这条路径是 左边最大贡献 + 当前节点值 + 右边最大贡献
+    // 用这个值来更新全局的 maxSum
+    const priceNewPath = node.val + leftGain + rightGain;
+    maxSum = Math.max(maxSum, priceNewPath);
+
+    // 返回最大值
+    return node.val + Math.max(leftGain, rightGain);
+  };
+
+  dfs(root);
+
+  return maxSum;
+};
